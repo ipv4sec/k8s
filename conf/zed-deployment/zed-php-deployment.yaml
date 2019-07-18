@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zed-php-deployment
+  labels:
+    app: zed-php-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: zed-php-deployment
+      labels:
+        app: zed-php-deployment
+    spec:
+      containers:
+        - name: zed-php-deployment
+          image: ipv4sec/php:v1
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: zed-php-deployment

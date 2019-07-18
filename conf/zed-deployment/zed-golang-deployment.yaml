@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zed-golang-deployment
+  labels:
+    app: zed-golang-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: zed-golang-deployment
+      labels:
+        app: zed-golang-deployment
+    spec:
+      containers:
+        - name: zed-golang-deployment
+          image: ipv4sec/golang:v1
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: zed-golang-deployment

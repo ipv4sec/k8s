@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zed-java-deployment
+  labels:
+    app: zed-java-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: zed-java-deployment
+      labels:
+        app: zed-java-deployment
+    spec:
+      containers:
+        - name: zed-java-deployment
+          image: ipv4sec/java:v1
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: zed-java-deployment

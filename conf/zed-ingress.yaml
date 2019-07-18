@@ -5,25 +5,25 @@ metadata:
   name: zed-ingress
 spec:
   rules:
-  - http:
-      paths:
-      - path: /golang
-        backend:
-          serviceName: zed-golang
-          servicePort: 8080
-      - path: /java
-        backend:
-          serviceName: zed-java
-          servicePort: 8080
-      - path: /nodejs
-        backend:
-          serviceName: zed-nodejs
-          servicePort: 8080
-      - path: /php
-        backend:
-          serviceName: zed-php
-          servicePort: 8080
-      - path: /python
-        backend:
-          serviceName: zed-python
-          servicePort: 8080
+    - http:
+        paths:
+          - path: /golang
+            backend:
+              serviceName: zed-golang
+              servicePort: 8080
+          - path: /java
+            backend:
+              serviceName: zed-java
+              servicePort: 8080
+          - path: /nodejs
+            backend:
+              serviceName: zed-nodejs
+              servicePort: 8080
+          - path: /php
+            backend:
+              serviceName: zed-php
+              servicePort: 8080
+          - path: /python
+            backend:
+              serviceName: zed-python
+              servicePort: 8080

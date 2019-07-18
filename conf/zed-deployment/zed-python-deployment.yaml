@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zed-python-deployment
+  labels:
+    app: zed-python-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: zed-python-deployment
+      labels:
+        app: zed-python-deployment
+    spec:
+      containers:
+        - name: zed-python-deployment
+          image: ipv4sec/python:v1
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: zed-python-deployment
